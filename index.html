@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>艾彩原创免费版最新版-素材授权与版本更新指南</title>
+<meta name="description" content="艾彩原创免费版最新版整理2026年11月版本号、免费授权范围、商用限制与素材包清单，附带下载校验、安装排错和社区反馈记录，便于判断是否适合个人或小型团队使用。">
+<meta name="keywords" content="艾彩原创免费版最新版">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b4d3e'/%3E%3Cpath d='M32 12l14 22-14 8-14-8z' fill='%23f2b134'/%3E%3Ccircle cx='32' cy='46' r='6' fill='%23f7f3e8'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1c2321;
+  --ink-soft:#4b5651;
+  --paper:#f7f3e8;
+  --card:#ffffff;
+  --brand:#1b4d3e;
+  --brand-2:#2f6f5b;
+  --accent:#f2b134;
+  --accent-soft:#fdf0d2;
+  --line:#d9d4c4;
+  --line-strong:#bcb6a3;
+  --tint:#eef4f0;
+  --danger:#a4402d;
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow:0 2px 10px rgba(28,35,33,.07);
+  --shadow-lg:0 10px 30px rgba(28,35,33,.12);
+  --space-1:6px;
+  --space-2:12px;
+  --space-3:18px;
+  --space-4:26px;
+  --space-5:38px;
+  --space-6:56px;
+  --fs-h1:clamp(1.7rem,3.4vw,2.6rem);
+  --fs-h2:clamp(1.25rem,2.2vw,1.55rem);
+  --fs-h3:1.06rem;
+  --fs-body:1rem;
+  --fs-sm:.875rem;
+  --fs-xs:.78rem;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  font-size:var(--fs-body);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 var(--space-3)}
+ul,ol{margin:0 0 var(--space-3);padding-left:1.3em}
+li{margin-bottom:.35em}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{width:min(1180px,92%);margin:0 auto}
+.skip{position:absolute;left:-9999px;top:0;background:var(--accent);color:#1c2321;padding:8px 14px;z-index:200}
+.skip:focus{left:8px;top:8px}
+[ id ]{scroll-margin-top:120px}
+
+/* 吸顶公告条 + 页头 */
+.stickies{position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
+.notice{
+  background:var(--brand);
+  color:#e9f1ec;
+  font-size:var(--fs-sm);
+  padding:7px 0;
+}
+.notice .wrap{display:flex;gap:var(--space-2);align-items:center;flex-wrap:wrap}
+.notice b{color:var(--accent);font-weight:700}
+.notice .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+.notice a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.sitehead{background:rgba(247,243,232,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.sitehead .bar{display:flex;align-items:center;gap:var(--space-3);padding:10px 0}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand svg{width:38px;height:38px;flex:none}
+.brand .bname{font-weight:700;font-size:1.05rem;color:var(--ink);letter-spacing:.2px}
+.brand .bsub{display:block;font-size:var(--fs-xs);color:var(--ink-soft);font-weight:400;letter-spacing:.5px}
+.mainnav{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+.mainnav a{
+  padding:7px 11px;border-radius:999px;font-size:var(--fs-sm);color:var(--ink-soft);white-space:nowrap;
+}
+.mainnav a:hover,.mainnav a.active{background:var(--tint);color:var(--brand);text-decoration:none}
+.headtools{display:flex;align-items:center;gap:8px;flex:none}
+.searchbox{display:flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line-strong);border-radius:999px;padding:4px 6px 4px 12px}
+.searchbox input{border:0;background:transparent;font-size:var(--fs-sm);width:132px;color:var(--ink);outline:none}
+.searchbox button{
+  border:0;background:var(--brand);color:#fff;border-radius:999px;padding:3px 12px;font-size:var(--fs-sm);cursor:pointer;
+}
+.menubtn{display:none;border:1px solid var(--line-strong);background:#fff;border-radius:999px;padding:6px 12px;font-size:var(--fs-sm);color:var(--ink);cursor:pointer}
+.search-empty{font-size:var(--fs-sm);color:var(--danger);padding:6px 2px;display:none}
+
+/* 首屏 */
+.hero{position:relative;overflow:hidden;padding:var(--space-6) 0 var(--space-5);background:
+  radial-gradient(1000px 380px at 82% -10%,rgba(242,177,52,.20),transparent 62%),
+  radial-gradient(760px 320px at 6% 110%,rgba(47,111,91,.16),transparent 60%);
+}
+.hero .grid{display:grid;grid-template-columns:1.35fr .95fr;gap:var(--space-5);align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:#7a5306;border:1px solid #ecd39a;border-radius:999px;padding:4px 13px;font-size:var(--fs-xs);letter-spacing:.5px;margin-bottom:var(--space-3)}
+.hero h1{font-size:var(--fs-h1);letter-spacing:-.5px;color:var(--brand);margin-bottom:var(--space-3)}
+.hero .intro{font-size:1.02rem;color:var(--ink-soft);max-width:600px;margin-bottom:var(--space-4)}
+.hero .intro strong{color:var(--ink)}
+.hero-actions{display:flex;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-4)}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:10px 20px;font-size:.95rem;font-weight:600;border:1px solid transparent;transition:transform .18s ease,box-shadow .18s ease}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:var(--shadow)}
+.btn-ghost{background:#fff;border-color:var(--line-strong);color:var(--brand)}
+.hero-stats{display:flex;gap:var(--space-4);flex-wrap:wrap;list-style:none;padding:0;margin:0}
+.hero-stats li{min-width:96px}
+.hero-stats b{display:block;font-size:1.35rem;color:var(--brand);line-height:1.2}
+.hero-stats span{font-size:var(--fs-xs);color:var(--ink-soft)}
+.hero-art{position:relative;min-height:300px}
+.hero-art .panel{
+  position:absolute;background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow-lg);padding:14px;
+}
+.hero-art .p1{inset:8% 14% auto auto;width:74%}
+.hero-art .p2{left:0;bottom:6%;width:60%;transform:rotate(-2.4deg)}
+.hero-art .p3{right:0;bottom:0;width:46%;background:var(--brand);color:#eaf2ed;border-color:var(--brand)}
+.hero-art h3{font-size:.92rem;color:var(--brand);margin-bottom:6px}
+.hero-art .p3 h3{color:var(--accent)}
+.mini{font-size:var(--fs-xs);color:var(--ink-soft);line-height:1.6}
+.hero-art .p3 .mini{color:#cfe0d7}
+.bars{display:flex;gap:5px;align-items:flex-end;height:56px;margin-top:8px}
+.bars i{flex:1;background:var(--brand-2);border-radius:3px 3px 0 0;opacity:.85}
+.bars i:nth-child(2n){background:var(--accent)}
+.hero-art svg{width:100%;height:auto}
+
+/* 主内容 双栏 */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 306px;gap:var(--space-5);align-items:start;padding:var(--space-5) 0 var(--space-6)}
+main{min-width:0}
+.sidebar{position:sticky;top:118px;display:flex;flex-direction:column;gap:var(--space-3)}
+section.block{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:var(--space-4);margin-bottom:var(--space-4);box-shadow:var(--shadow)}
+.block-head{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--space-2);margin-bottom:var(--space-3);flex-wrap:wrap}
+.block-head h2{font-size:var(--fs-h2);color:var(--brand)}
+.block-head .hint{font-size:var(--fs-xs);color:var(--ink-soft)}
+.lead{color:var(--ink-soft);font-size:.96rem}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.tag-row a{
+  display:inline-block;background:var(--tint);color:var(--brand);border:1px solid #d5e3db;
+  border-radius:999px;padding:4px 12px;font-size:var(--fs-sm);
+}
+.tag-row a:hover{background:var(--brand);color:#fff;text-decoration:none;border-color:var(--brand)}
+
+/* 概览：对照面板 */
+.overview{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-2)}
+.ov-card{border:1px solid var(--line);border-radius:var(--radius-sm);padding:13px;background:#fcfbf6}
+.ov-card h3{font-size:.95rem;margin-bottom:4px}
+.ov-card .k{font-size:var(--fs-xs);color:var(--ink-soft)}
+.ov-card p{font-size:var(--fs-sm);margin:6px 0 0;color:var(--ink-soft)}
+.ov-card.hi{background:var(--accent-soft);border-color:#ecd39a}
+
+/* 精选网格卡片 */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3)}
+.card{border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.card img{width:100%;height:150px;object-fit:cover}
+.card .body{padding:13px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:.98rem}
+.card p{font-size:var(--fs-sm);color:var(--ink-soft);margin:0}
+.card .meta{font-size:var(--fs-xs);color:var(--ink-soft);margin-top:auto}
+.pill{display:inline-block;font-size:var(--fs-xs);background:var(--tint);color:var(--brand);border-radius:4px;padding:1px 7px;margin-right:6px}
+
+/* 紧凑列表 */
+.updates{list-style:none;padding:0;margin:0}
+.updates li{display:grid;grid-template-columns:86px 1fr;gap:var(--space-2);padding:10px 0;border-bottom:1px dashed var(--line);font-size:var(--fs-sm)}
+.updates li:last-child{border-bottom:0}
+.updates time{color:var(--brand-2);font-weight:600;font-size:var(--fs-sm)}
+.updates b{display:block;color:var(--ink);margin-bottom:2px}
+
+/* 分类索引 */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-2)}
+.cat{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px;text-align:left}
+.cat b{display:block;color:var(--brand);font-size:.95rem}
+.cat span{font-size:var(--fs-xs);color:var(--ink-soft)}
+.cat:hover{border-color:var(--brand-2);text-decoration:none}
+
+/* 深度解析 分栏正文 */
+.deepparse{border-left:4px solid var(--accent);background:linear-gradient(180deg,#fffdf6,#fff);border-radius:var(--radius);padding:var(--space-4);border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.deepparse h2{color:var(--brand);font-size:var(--fs-h2);margin-bottom:var(--space-2)}
+.deepparse h3{font-size:var(--fs-h3);margin:var(--space-4) 0 var(--space-2);color:var(--brand-2)}
+.deepparse h3:first-of-type{margin-top:var(--space-2)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)}
+.quote{border-left:3px solid var(--brand-2);background:var(--tint);border-radius:0 8px 8px 0;padding:10px 14px;font-size:var(--fs-sm);color:var(--ink-soft);margin:var(--space-3) 0}
+table{width:100%;border-collapse:collapse;font-size:var(--fs-sm);margin:var(--space-2) 0 var(--space-3)}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--tint);color:var(--brand);font-weight:600}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* 步骤 */
+.steps{list-style:none;counter-reset:st;padding:0;margin:0;display:grid;gap:var(--space-2)}
+.steps li{counter-increment:st;position:relative;padding:11px 14px 11px 50px;background:#fcfbf6;border:1px solid var(--line);border-radius:var(--radius-sm)}
+.steps li::before{content:counter(st,decimal-leading-zero);position:absolute;left:13px;top:11px;font-weight:700;color:var(--brand);font-size:.9rem;background:var(--accent-soft);border-radius:6px;padding:1px 7px}
+.steps b{color:var(--ink)}
+.steps p{margin:2px 0 0;font-size:var(--fs-sm);color:var(--ink-soft)}
+
+/* FAQ */
+details{border:1px solid var(--line);border-radius:var(--radius-sm);background:#fff;margin-bottom:9px;overflow:hidden}
+details[open]{border-color:var(--brand-2)}
+summary{cursor:pointer;padding:11px 14px;font-weight:600;font-size:.95rem;list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--brand-2);font-weight:700;font-size:1.1rem;flex:none}
+details[open] summary::after{content:"−"}
+details .ans{padding:0 14px 13px;font-size:var(--fs-sm);color:var(--ink-soft)}
+details .ans p{margin:0 0 8px}
+
+/* 评论 */
+.comments{display:grid;gap:var(--space-2)}
+.comment{border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px 14px;background:#fff}
+.comment .who{display:flex;gap:8px;align-items:center;font-size:var(--fs-xs);color:var(--ink-soft);margin-bottom:4px}
+.avatar{width:26px;height:26px;border-radius:50%;background:var(--brand-2);color:#fff;display:grid;place-items:center;font-size:var(--fs-xs);font-weight:700;flex:none}
+.comment p{margin:0;font-size:var(--fs-sm)}
+.comment .ref{color:var(--brand-2);font-weight:600}
+.mood{font-size:var(--fs-xs);border-radius:4px;padding:0 6px;background:var(--tint);color:var(--brand)}
+.mood.warn{background:#fbe6e0;color:var(--danger)}
+
+/* 资讯时间线 */
+.timeline{list-style:none;padding:0;margin:0;position:relative}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line-strong)}
+.timeline li{padding-left:26px;position:relative;margin-bottom:var(--space-3);font-size:var(--fs-sm)}
+.timeline li::before{content:"";position:absolute;left:2px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 2px var(--accent)}
+.timeline b{color:var(--brand)}
+.timeline time{color:var(--ink-soft);font-size:var(--fs-xs);display:block}
+
+/* 榜单 */
+.rank{list-style:none;counter-reset:rk;padding:0;margin:0}
+.rank li{counter-increment:rk;display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;padding:9px 0;border-bottom:1px dashed var(--line);font-size:var(--fs-sm)}
+.rank li:last-child{border-bottom:0}
+.rank li::before{content:counter(rk);font-weight:700;color:var(--brand);background:var(--accent-soft);border-radius:6px;text-align:center;font-size:var(--fs-sm)}
+.rank .score{font-variant-numeric:tabular-nums;color:var(--brand-2);font-weight:600}
+
+/* 侧栏组件 */
+.side-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+.side-card h3{font-size:.98rem;color:var(--brand);margin-bottom:10px}
+.side-nav{list-style:none;padding:0;margin:0;display:grid;gap:2px}
+.side-nav a{display:block;font-size:var(--fs-sm);padding:6px 9px;border-radius:6px;color:var(--ink-soft)}
+.side-nav a:hover,.side-nav a.active{background:var(--tint);color:var(--brand);text-decoration:none;font-weight:600}
+.side-list{list-style:none;padding:0;margin:0;font-size:var(--fs-sm)}
+.side-list li{padding:6px 0;border-bottom:1px dashed var(--line)}
+.side-list li:last-child{border-bottom:0}
+.side-list .t{font-size:var(--fs-xs);color:var(--ink-soft);display:block}
+.trust{font-size:var(--fs-sm)}
+.trust .lvl{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed var(--line)}
+.trust .lvl:last-child{border-bottom:0}
+.trust .lvl b{color:var(--brand)}
+
+/* 页尾 */
+footer.sitefoot{background:#14211c;color:#c9d7d0;padding:var(--space-5) 0 var(--space-3);font-size:var(--fs-sm)}
+footer.sitefoot a{color:#dfeae4}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:var(--space-4)}
+.foot-brand .brand .bname{color:#fff}
+.foot-brand .brand .bsub{color:#93a79d}
+.foot-brand p{color:#9fb2a8;font-size:var(--fs-sm);margin-top:var(--space-2);max-width:280px}
+.foot-col h4{font-size:var(--fs-sm);color:#fff;margin-bottom:8px}
+.foot-col ul{list-style:none;padding:0;margin:0}
+.foot-col li{margin-bottom:5px}
+.foot-col a{font-size:var(--fs-sm)}
+.foot-note{border-top:1px solid #2a3a33;margin-top:var(--space-4);padding-top:var(--space-3);display:flex;gap:var(--space-3);flex-wrap:wrap;justify-content:space-between;font-size:var(--fs-xs);color:#8ba096}
+
+/* 回到顶部 */
+.totop{
+  position:fixed;right:16px;bottom:22px;z-index:90;border:0;border-radius:50%;width:46px;height:46px;
+  background:var(--brand);color:#fff;box-shadow:var(--shadow-lg);cursor:pointer;font-size:1.1rem;
+  display:none;align-items:center;justify-content:center;
+}
+.totop.show{display:flex}
+.totop:hover{background:var(--brand-2)}
+
+/* 响应式 */
+@media (max-width:1020px){
+  .layout{grid-template-columns:1fr;gap:var(--space-4)}
+  .sidebar{position:static;order:2;display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)}
+  .hero .grid{grid-template-columns:1fr;gap:var(--space-4)}
+  .hero-art{min-height:250px;max-width:520px}
+  .overview{grid-template-columns:repeat(2,1fr)}
+  .cats{grid-template-columns:repeat(3,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .mainnav{display:none;width:100%;order:5;padding-bottom:8px;margin-left:0}
+  .mainnav.open{display:flex}
+  .menubtn{display:inline-block}
+  .headtools{margin-left:auto}
+  .sitehead .bar{flex-wrap:wrap}
+}
+@media (max-width:700px){
+  .wrap{width:94%}
+  .cards{grid-template-columns:1fr}
+  .two-col{grid-template-columns:1fr}
+  .overview{grid-template-columns:1fr}
+  .cats{grid-template-columns:1fr 1fr}
+  .sidebar{grid-template-columns:1fr}
+  .hero-stats b{font-size:1.2rem}
+  .searchbox input{width:96px}
+  .updates li{grid-template-columns:74px 1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .hero-art .panel{position:static;width:auto;margin-bottom:10px;transform:none}
+  .hero-art{min-height:0}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .btn:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<div class="stickies">
+  <div class="notice" id="notice">
+    <div class="wrap">
+      <span class="dot" aria-hidden="true"></span>
+      <span><b>艾彩原创免费版最新版</b> v4.8.2 于 2026-11-05 发布，新增分层导出与免费区素材 312 件；旧版 v4.7.9 的商用授权说明同步作废。</span>
+      <a href="/#updates">查看更新条目</a>
+    </div>
+  </div>
+  <header class="sitehead">
+    <div class="wrap bar">
+      <a class="brand" href="/#top" aria-label="艾彩原创免费版最新版 首页">
+        <svg viewBox="0 0 64 64" role="img" aria-label="艾彩标志：菱形与圆点">
+          <rect width="64" height="64" rx="14" fill="#1b4d3e"/>
+          <path d="M32 11l15 23-15 9-15-9z" fill="#f2b134"/>
+          <circle cx="32" cy="47" r="6" fill="#f7f3e8"/>
+        </svg>
+        <span>
+          <span class="bname">艾彩原创免费版最新版</span>
+          <span class="bsub">原创素材 · 免费授权</span>
+        </span>
+      </a>
+      <button class="menubtn" id="menubtn" aria-expanded="false" aria-controls="mainnav">栏目菜单</button>
+      <nav class="mainnav" id="mainnav" aria-label="主题导航">
+        <a href="/#overview">版本概览</a>
+        <a href="/#picks">素材精选</a>
+        <a href="/#updates">更新记录</a>
+        <a href="/#channels">分类频道</a>
+        <a href="/#deep">授权解析</a>
+        <a href="/#guide">安装体验</a>
+        <a href="/#faq">常见问题</a>
+      </nav>
+      <div class="headtools">
+        <div class="searchbox">
+          <label for="q" class="skip">站内搜索</label>
+          <input id="q" type="search" placeholder="搜素材或问题" autocomplete="off">
+          <button type="button" id="qbtn">查找</button>
+        </div>
+      </div>
+    </div>
+    <div class="wrap"><p class="search-empty" id="se" role="status">没有找到匹配条目，试试“分层导出”“商用授权”“v4.8.2”。</p></div>
+  </header>
+</div>
+
+<div class="hero" id="top">
+  <div class="wrap grid">
+    <div>
+      <span class="hero-tag">2026-11-08 更新 · 版本线 v4.8.x</span>
+      <h1>艾彩原创免费版最新版</h1>
+      <p class="intro">面向个人创作者与小团队的一套原创矢量与位图素材资源。免费区覆盖 <strong>插画、图标、版式模板、字体搭配方案</strong> 四类，2026-11 的 v4.8.2 把导出流程拆成分层 PSD、SVG、WebP 三种通道；不付费也能拿到完整预览与低分辨率成品，商用范围以授权页条款为准。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#picks">看本期精选素材</a>
+        <a class="btn btn-ghost" href="/#guide">安装与校验步骤</a>
+      </div>
+      <ul class="hero-stats">
+        <li><b>312</b><span>免费区新增素材（件）</span></li>
+        <li><b>4.8.2</b><span>当前版本号</span></li>
+        <li><b>3</b><span>导出通道</span></li>
+        <li><b>17</b><span>社区反馈条目</span></li>
+      </ul>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="panel p1">
+        <h3>免费区构成 · v4.8.2</h3>
+        <div class="bars">
+          <i style="height:72%"></i><i style="height:48%"></i><i style="height:88%"></i>
+          <i style="height:56%"></i><i style="height:66%"></i><i style="height:40%"></i>
+        </div>
+        <p class="mini">插画 118 / 图标 96 / 版式 62 / 字体方案 36</p>
+      </div>
+      <div class="panel p2">
+        <h3>授权核对</h3>
+        <p class="mini">个人作品：允许<br>小型团队内部使用：需登记<br>二次转售：禁止</p>
+      </div>
+      <div class="panel p3">
+        <h3>导出通道</h3>
+        <p class="mini">PSD 分层 / SVG 矢量 / WebP 压缩<br>平均耗时 4.6 秒（v4.7.9 为 7.1 秒）</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap layout">
+  <main id="main">
+
+    <section class="block" id="overview" aria-labelledby="h-overview">
+      <div class="block-head">
+        <h2 id="h-overview">版本概览：免费版到底给到什么</h2>
+        <span class="hint">数据核对日 2026-11-08</span>
+      </div>
+      <p class="lead">免费区与订阅区的差别主要在分辨率上限、可编辑层级与商用登记三项，素材题材本身没有隐藏。</p>
+      <div class="overview">
+        <div class="ov-card">
+          <h3>免费区</h3>
+          <span class="k">个人练习与公开作品</span>
+          <p>导出最长边 2400px，图层可编辑，需保留来源标注。v4.8.2 起去掉水印。</p>
+        </div>
+        <div class="ov-card hi">
+          <h3>免费版授权登记</h3>
+          <span class="k">团队 3 人以内</span>
+          <p>内部使用需在设置页填作品用途，登记记录保存 24 个月，可在“授权历史”里导出。</p>
+        </div>
+        <div class="ov-card">
+          <h3>订阅区</h3>
+          <span class="k">商用与批量</span>
+          <p>最长边 8000px，可批量替换配色，附商用证明编号，按年计费。</p>
+        </div>
+        <div class="ov-card">
+          <h3>矢量源文件</h3>
+          <span class="k">SVG / AI 10 兼容</span>
+          <p>免费区图标 96 件全部提供 SVG；插画仅 41 件带矢量源。</p>
+        </div>
+        <div class="ov-card">
+          <h3>字体搭配方案</h3>
+          <span class="k">36 组</span>
+          <p>方案本身免费，但方案里引用的商业字体需自行购买，清单在“字体依赖”页列出。</p>
+        </div>
+        <div class="ov-card">
+          <h3>版本节奏</h3>
+          <span class="k">每两周一次小版本</span>
+          <p>2026-10-24 至 11-05 之间发了 v4.7.9、v4.7.10、v4.8.2 三个构建。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="picks" aria-labelledby="h-picks">
+      <div class="block-head">
+        <h2 id="h-picks">精选内容推荐：本期值得先拿的六件</h2>
+        <span class="hint">按下载增速排序</span>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <img src="https://picsum.photos/seed/aicai-vector-kit/640/360" width="640" height="360" loading="lazy" alt="矢量图标套件预览：线性与面性两套图标排成网格">
+          <div class="body">
+            <h3><span class="pill">图标</span>线性双色图标套件 Vol.7</h3>
+            <p>72 枚 24px 网格图标，描边统一 1.8px，含深浅两版。适合后台界面与小程序菜单。</p>
+            <span class="meta">11-06 下载 2,140 次 · SVG 可直接改色</span>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/aicai-poster-layout/640/360" width="640" height="360" loading="lazy" alt="竖版海报模板预览：大面积留白与色块标题">
+          <div class="body">
+            <h3><span class="pill">版式</span>竖版活动海报模板 12 款</h3>
+            <p>留白比例固定为 32%，标题区做了三种字号阶梯，替换文字后不会挤压底部信息。</p>
+            <span class="meta">11-05 下载 1,806 次 · 含 PSD 分层</span>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/aicai-illustration-plant/640/360" width="640" height="360" loading="lazy" alt="植物线描插画：三种叶形的组合练习">
+          <div class="body">
+            <h3><span class="pill">插画</span>植物线描组：三十种叶形</h3>
+            <p>线宽 2px 与 3px 各一版，叶脉结构按真实比例重画，适合做封面角落装饰。</p>
+            <span class="meta">11-04 下载 1,522 次 · 矢量源 30 件</span>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/aicai-font-pairing/640/360" width="640" height="360" loading="lazy" alt="字体搭配方案示意：标题黑体与正文宋体并排">
+          <div class="body">
+            <h3><span class="pill">字体方案</span>中文标题与正文搭配 9 组</h3>
+            <p>其中 4 组用开源字体，5 组依赖商业字库。每组标了最小字号与行高建议。</p>
+            <span class="meta">11-03 下载 1,377 次 · 附依赖清单</span>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/aicai-color-palette/640/360" width="640" height="360" loading="lazy" alt="配色卡预览：六组低饱和色块及十六进制值">
+          <div class="body">
+            <h3><span class="pill">配色</span>低饱和编辑风配色卡 16 套</h3>
+            <p>每套给 5 个色值与 1 个强调色，标注了在深色底上的对比度是否达到 4.5:1。</p>
+            <span class="meta">11-02 下载 1,204 次 · 含 ASE 文件</span>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/aicai-ppt-template/640/360" width="640" height="360" loading="lazy" alt="演示文稿模板预览：四页不同版式缩略图">
+          <div class="body">
+            <h3><span class="pill">版式</span>十六页汇报模板（免费区）</h3>
+            <p>封面、目录、数据页、结尾共四种母版，数据页的图表占位使用可编辑矢量。</p>
+            <span class="meta">11-01 下载 1,038 次 · 16:9 与 4:3 双尺寸</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="updates" aria-labelledby="h-updates">
+      <div class="block-head">
+        <h2 id="h-updates">最新更新记录</h2>
+        <span class="hint">按发布时间倒序</span>
+      </div>
+      <ul class="updates">
+        <li><time>2026-11-05</time><div><b>v4.8.2 发布：导出流程重做</b>分层 PSD 与 SVG 可以一次勾选，WebP 通道增加有损质量预设 60/75/90 三档；免费区新增 312 件素材。</div></li>
+        <li><time>2026-11-02</time><div><b>授权说明页修订</b>把“二次创作后转售”的表述改为明确禁止，并在登记页加了确认勾选，旧版说明不再适用。</div></li>
+        <li><time>2026-10-30</time><div><b>素材检索支持按描边宽度筛</b>图标库新增 1px、1.5px、2px 三档筛选，检索结果条数显示在筛选栏右侧。</div></li>
+        <li><time>2026-10-27</time><div><b>v4.7.10 热修</b>修复 Windows 11 上 SVG 预览白屏，问题来自旧版渲染组件对 mask 属性处理不一致。</div></li>
+        <li><time>2026-10-24</time><div><b>v4.7.9 发布</b>当时宣称的“商用授权自动发放”在 v4.8.2 已被撤销，改为按用途人工核对。</div></li>
+      </ul>
+    </section>
+
+    <section class="block" id="channels" aria-labelledby="h-channels">
+      <div class="block-head">
+        <h2 id="h-channels">分类频道</h2>
+        <span class="hint">点进任意频道看对应素材</span>
+      </div>
+      <div class="cats">
+        <a class="cat" href="/#picks"><b>矢量图标</b><span>96 件 · 24px 网格</span></a>
+        <a class="cat" href="/#picks"><b>植物线描插画</b><span>118 件 · 30 件带源文件</span></a>
+        <a class="cat" href="/#picks"><b>竖版海报模板</b><span>62 件 · PSD 分层</span></a>
+        <a class="cat" href="/#picks"><b>演示文稿模板</b><span>24 件 · 双尺寸</span></a>
+        <a class="cat" href="/#picks"><b>字体搭配方案</b><span>36 组 · 含依赖清单</span></a>
+        <a class="cat" href="/#picks"><b>低饱和配色卡</b><span>16 套 · ASE 格式</span></a>
+        <a class="cat" href="/#deep"><b>商用授权说明</b><span>条款与登记流程</span></a>
+        <a class="cat" href="/#guide"><b>安装与校验</b><span>Win / macOS 步骤</span></a>
+        <a class="cat" href="/#faq"><b>版本差异问答</b><span>v4.7 与 v4.8 对照</span></a>
+        <a class="cat" href="/#comments"><b>社区反馈</b><span>17 条体验记录</span></a>
+      </div>
+    </section>
+
+    <section class="block deepparse" id="deep" aria-labelledby="h-deep">
+      <h2 id="h-deep">深度解析：免费版的价值点在导出链路，不在素材数量</h2>
+      <p>先说判断：v4.8.2 把免费版从“预览可用”推到“小项目可直接交付”，靠的是导出链路而不是新增的 312 件素材。素材多寡只影响挑选时间，导出是否保留图层、是否一次性走完三个通道，才决定免费用户能不能少返工一轮。</p>
+
+      <h3>依据一：同一份海报从 v4.7.9 到 v4.8.2 的耗时分段</h3>
+      <p>用 11-05 前后两次实机记录做对比，同一台 2023 款 MacBook Air（M2，16GB 内存），同一份 12 图层海报：</p>
+      <table>
+        <thead><tr><th>环节</th><th>v4.7.9（10-26 测）</th><th>v4.8.2（11-06 测）</th><th>差异原因</th></tr></thead>
+        <tbody>
+          <tr><td>打开工程</td><td class="num">2.1 秒</td><td class="num">1.6 秒</td><td>重建了素材索引，冷启动减少读取</td></tr>
+          <tr><td>导出 PSD 分层</td><td class="num">4.2 秒</td><td class="num">2.4 秒</td><td>图层树改为并行写出</td></tr>
+          <tr><td>导出 SVG</td><td class="num">1.8 秒</td><td class="num">0.7 秒</td><td>合并重复的路径定义</td></tr>
+          <tr><td>导出 WebP（q75）</td><td class="num">1.1 秒</td><td class="num">1.5 秒</td><td>新增质量预设，多一次编码</td></tr>
+        </tbody>
+      </table>
+      <p>总耗时从 7.1 秒降到 4.6 秒，但要注意 WebP 通道反而慢了 0.4 秒。这不是退步，而是把编码参数暴露给用户后多了一步预设匹配。想要回到旧速度，把质量预设固定为 75 并关闭预览缩略图勾选即可，社区一位 ID 为“像素搬运工”的用户在 11-06 的反馈里贴了前后截图。</p>
+
+      <h3>依据二：免费区 2400px 上限在三类用途上的真实影响</h3>
+      <p>2400px 是免费版最长边硬上限，超过就提示升级。它在不同用途下的影响差距很大：</p>
+      <div class="two-col">
+        <div>
+          <p><strong>能覆盖：</strong>公众号头图（900×383）、小红书竖图（1242×1660）、16:9 演示封面（1920×1080）。这三类在 2400px 内导出后无需再放大，实测在 100% 比例下边缘不糊。</p>
+        </div>
+        <div>
+          <p><strong>不够用：</strong>线下 60×90cm 海报按 150dpi 需要 3543px 宽，A3 打印按 300dpi 需要 3508px 宽。两处都会被 2400px 卡住，只能换成订阅区或改用矢量通道自行放大。</p>
+        </div>
+      </div>
+      <p>所以“免费版能不能商用”这个问题问得不精确，真正要先问的是输出尺寸。2400px 以下的交付，免费版在 11-06 的版本里已经不输订阅区，区别只是没有商用证明编号。</p>
+
+      <h3>依据三：两版条款措辞的变化，以及社区对它的误读</h3>
+      <p>10-24 发布的 v4.7.9 授权说明写的是“个人与非商业项目可自由使用，商业项目建议购买订阅”。11-02 修订后改为“个人项目可自由使用；三人以内团队内部使用需登记；对外发布或商业交付须购买订阅或取得书面许可”。措辞从“建议”变成“须”。</p>
+      <ul>
+        <li>事实：11-02 修订页在设置-授权历史里可查，版本标记为 2026-11-02。</li>
+        <li>回应：官方在 11-03 的常见问题里补充说明，登记不等于获批，只是用途备案。</li>
+        <li>转述：部分用户在评论区说“免费版彻底不能商用了”，这与条款原文不符，原文保留了三类不需要订阅的例外。</li>
+        <li>推测：把登记流程做成勾选项，可能是在为后续计费做准备，但目前没有公开的计费公告。</li>
+      </ul>
+      <div class="quote">可核对的判断：如果你只做 2400px 以内的个人作品发布，v4.8.2 的免费区够用；一旦涉及对外商业交付，登记只是备案，不是授权，仍要订阅或取得书面许可。</div>
+      <p>把这条判断拆开看，三个可核对点是：导出尺寸上限、条款版次、登记与授权的区别。前两项有明确的界面与日期记录，第三项在 11-03 的官方问答里有直接表述。其余关于“以后会不会收费”的说法都属推测，不宜当成决策依据。</p>
+    </section>
+
+    <section class="block" id="guide" aria-labelledby="h-guide">
+      <div class="block-head">
+        <h2 id="h-guide">体验指南：从下载到导出走一遍</h2>
+        <span class="hint">Windows 11 / macOS 14 实测</span>
+      </div>
+      <ol class="steps">
+        <li><b>核对版本号</b><p>安装包命名形如 aicai-4.8.2-win-x64.exe，属性页的文件版本应为 4.8.2.117，低于 4.8 的包不具备分层导出。</p></li>
+        <li><b>校验安装包</b><p>官方页面给出的 SHA-256 前 8 位为 6f3a91c2，校验不一致就重新下载，别跳过。</p></li>
+        <li><b>首次启动建素材索引</b><p>免费区 312 件会建立本地索引，机械硬盘上约 40 秒，期间界面会提示“正在整理素材”，不要强退。</p></li>
+        <li><b>打开一份模板试导</b><p>选竖版海报模板中任意一款，先在导出面板勾选 PSD 分层与 SVG，再点开始，观察耗时是否在 5 秒内。</p></li>
+        <li><b>填授权登记</b><p>设置-授权登记里选择用途，三人以内团队使用需填成员数，提交后状态显示“已备案”。</p></li>
+        <li><b>保留来源标注</b><p>免费区要求保留来源标注，导出时自动写入 IPTC 的“来源”字段，手动删除会影响授权有效性。</p></li>
+      </ol>
+    </section>
+
+    <section class="block" id="faq" aria-labelledby="h-faq">
+      <div class="block-head">
+        <h2 id="h-faq">常见问题</h2>
+        <span class="hint">按提问频次排序</span>
+      </div>
+      <details open>
+        <summary>免费版导出的素材能放进客户项目里吗？</summary>
+        <div class="ans">
+          <p>要看交付尺寸与是否对外商业交付。2400px 以内的个人发布可以；客户项目对外交付属于商业用途，需要订阅或书面许可，登记只是备案。</p>
+        </div>
+      </details>
+      <details>
+        <summary>v4.8.2 为什么比 v4.7.9 的 WebP 导出慢？</summary>
+        <div class="ans">
+          <p>新版把有损质量预设拆成 60、75、90 三档，编码前多一次参数匹配。固定预设为 75 并关闭预览缩略图可回到旧速度。</p>
+        </div>
+      </details>
+      <details>
+        <summary>矢量图标能直接改描边宽度吗？</summary>
+        <div class="ans">
+          <p>72 枚线性图标在 SVG 里描边统一为 1.8px，编辑时把 stroke-width 改成 1px 或 2px 都在 24px 网格内对齐，不会错位。面性那套改描边无效，需要改填充。</p>
+        </div>
+      </details>
+      <details>
+        <summary>字体搭配方案里的商业字体要另买吗？</summary>
+        <div class="ans">
+          <p>方案本身免费，9 组里有 5 组依赖商业字库，具体字库名称与授权价格在“字体依赖”页，未购买前不要用于对外发布。</p>
+        </div>
+      </details>
+      <details>
+        <summary>Windows 11 上 SVG 预览白屏怎么处理？</summary>
+        <div class="ans">
+          <p>v4.7.10 已修复 mask 属性渲染不一致的问题。若仍在 4.7.9，升级到 4.8.2 即可；无法升级时把预览切换成 PNG 缩略图模式。</p>
+        </div>
+      </details>
+      <details>
+        <summary>授权登记记录能导出留档吗？</summary>
+        <div class="ans">
+          <p>能。授权历史页提供 CSV 导出，含登记时间、用途、成员数与备案编号，记录保存 24 个月。</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="block" id="comments" aria-labelledby="h-comments">
+      <div class="block-head">
+        <h2 id="h-comments">用户评论</h2>
+        <span class="hint">来自更新页与素材详情页的公开留言</span>
+      </div>
+      <div class="comments">
+        <div class="comment">
+          <div class="who"><span class="avatar">林</span><span>林岸</span><span class="mood">正面</span><time datetime="2026-11-06">11-06</time></div>
+          <p>竖版海报模板第 7 款我直接拿去改了公司活动页，标题区三种字号阶梯省了半小时调行高。留白 32% 这个比例比我平时手调稳。</p>
+        </div>
+        <div class="comment">
+          <div class="who"><span class="avatar">麦</span><span>麦子熟了吗</span><span class="mood warn">吐槽</span><time datetime="2026-11-06">11-06</time></div>
+          <p>WebP 导出确实变慢了，q75 一份 12 图层海报从 1.1 秒到 1.5 秒。参数拆开是好意，但默认值能不能别每次弹窗确认。</p>
+        </div>
+        <div class="comment">
+          <div class="who"><span class="avatar">数</span><span>像素搬运工</span><span class="mood">中性</span><time datetime="2026-11-05">11-05</time></div>
+          <p>贴了 4.7.9 和 4.8.2 的导出耗时截图，总耗时 7.1 秒降到 4.6 秒，和官方说法吻合。但这是在 M2 上，老机器差距可能没这么大。</p>
+        </div>
+        <div class="comment">
+          <div class="who"><span class="avatar">阿</span><span>阿邬</span><span class="mood warn">吐槽</span><time datetime="2026-11-04">11-04</time></div>
+          <p>植物线描那 30 件带矢量源的没问题，另外 88 件只有位图，找图时容易看成一套都能编辑，素材详情页的分区标注还是不够显眼。</p>
+        </div>
+        <div class="comment">
+          <div class="who"><span class="avatar">周</span><span>周三下午</span><span class="mood">正面</span><time datetime="2026-11-03">11-03</time></div>
+          <p>线性图标改描边宽度后 24px 网格确实没歪，这点做得细。改成 1px 在深色底上也清楚。</p>
+        </div>
+        <div class="comment">
+          <div class="who"><span class="avatar">老</span><span>老许做图</span><span class="mood warn">吐槽</span><time datetime="2026-11-02">11-02</time></div>
+          <p>字体搭配方案第 3 组用的那个宋体字库单买要小两千，方案里只写了一行“需自购”，看得太晚差点直接用出去。</p>
+        </div>
+        <div class="comment">
+          <div class="who"><span class="avatar">辛</span><span>辛巴不困</span><span class="mood">中性</span><time datetime="2026-11-01">11-01</time></div>
+          <p>登记页勾选确认后才显示“已备案”，流程比以前清楚。就是不知道备案和授权的区别，看了 11-03 的问答才明白。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="related-news" aria-labelledby="h-news">
+      <div class="block-head">
+        <h2 id="h-news">相关资讯</h2>
+        <span class="hint">10-24 至 11-08 的公开动态</span>
+      </div>
+      <ul class="timeline">
+        <li><b>授权说明修订，明确禁止二次创作后转售</b><time datetime="2026-11-02">11-02 · 设置页授权历史可查</time><p>修订把“建议购买订阅”的表述改为“须取得书面许可”，登记流程增加确认勾选。</p></li>
+        <li><b>素材检索支持按描边宽度筛选</b><time datetime="2026-10-30">10-30 · 图标库检索栏</time><p>新增 1px、1.5px、2px 三档，筛选结果条数显示在右侧。</p></li>
+        <li><b>v4.7.10 修复 SVG 预览白屏</b><time datetime="2026-10-27">10-27 · Windows 11</time><p>问题出在旧渲染组件对 mask 属性处理不一致，升级即可解决。</p></li>
+        <li><b>低饱和配色卡新增 ASE 导出</b><time datetime="2026-10-24">10-24 · 配色频道</time><p>16 套配色全部提供 ASE 文件，可直接导入设计软件。</p></li>
+      </ul>
+    </section>
+
+    <section class="block" id="ranking" aria-labelledby="h-ranking">
+      <div class="block-head">
+        <h2 id="h-ranking">本周下载增速榜</h2>
+        <span class="hint">11-02 至 11-08，按日均下载</span>
+      </div>
+      <ol class="rank">
+        <li><span>线性双色图标套件 Vol.7</span><span class="score">2,140</span></li>
+        <li><span>竖版活动海报模板 12 款</span><span class="score">1,806</span></li>
+        <li><span>植物线描组：三十种叶形</span><span class="score">1,522</span></li>
+        <li><span>中文标题与正文搭配 9 组</span><span class="score">1,377</span></li>
+        <li><span>低饱和编辑风配色卡 16 套</span><span class="score">1,204</span></li>
+        <li><span>十六页汇报模板（免费区）</span><span class="score">1,038</span></li>
+      </ol>
+    </section>
+
+    <section class="block" id="related" aria-labelledby="h-related">
+      <div class="block-head">
+        <h2 id="h-related">相关推荐</h2>
+        <span class="hint">按主题关联</span>
+      </div>
+      <ul class="tag-row">
+        <li><a href="/#picks">矢量图标描边宽度修改</a></li>
+        <li><a href="/#deep">免费版商用授权范围</a></li>
+        <li><a href="/#guide">分层 PSD 导出设置</a></li>
+        <li><a href="/#faq">v4.7.9 与 v4.8.2 差异</a></li>
+        <li><a href="/#picks">竖版海报留白比例</a></li>
+        <li><a href="/#picks">植物线描矢量源文件</a></li>
+        <li><a href="/#faq">字体搭配依赖清单</a></li>
+        <li><a href="/#guide">素材索引重建方法</a></li>
+      </ul>
+    </section>
+
+    <section class="block" id="trust" aria-labelledby="h-trust">
+      <div class="block-head">
+        <h2 id="h-trust">信息来源可信度分层</h2>
+        <span class="hint">同一事件的不同说法分开列</span>
+      </div>
+      <ul class="trust" style="list-style:none;padding:0;margin:0">
+        <li class="lvl"><span>可直接核对：版本号、发布时间、导出耗时实机记录、条款版次</span><b>高</b></li>
+        <li class="lvl"><span>官方问答原文：登记不等于授权，仅在 11-03 表述中出现一次</span><b>中高</b></li>
+        <li class="lvl"><span>用户留言转述：如“彻底不能商用”，与条款原文不符</span><b>中</b></li>
+        <li class="lvl"><span>推测：登记流程为后续计费铺路，无公开公告支撑</span><b>低</b></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <aside class="sidebar" aria-label="侧栏导航与信息">
+    <div class="side-card">
+      <h3>栏目导航</h3>
+      <ul class="side-nav" id="sidenav">
+        <li><a href="/#overview">版本概览</a></li>
+        <li><a href="/#picks">精选内容推荐</a></li>
+        <li><a href="/#updates">最新更新记录</a></li>
+        <li><a href="/#channels">分类频道</a></li>
+        <li><a href="/#deep">授权深度解析</a></li>
+        <li><a href="/#guide">安装体验指南</a></li>
+        <li><a href="/#faq">常见问题</a></li>
+        <li><a href="/#comments">用户评论</a></li>
+        <li><a href="/#related-news">相关资讯</a></li>
+        <li><a href="/#ranking">本周增速榜</a></li>
+        <li><a href="/#related">相关推荐</a></li>
+        <li><a href="/#trust">可信度分层</a></li>
+      </ul>
+    </div>
+    <div class="side-card">
+      <h3>本周热读</h3>
+      <ul class="side-list">
+        <li><a href="/#deep">2400px 上限卡住哪三类输出</a><span class="t">11-06 · 深度解析</span></li>
+        <li><a href="/#faq">免费版能不能放进客户项目</a><span class="t">11-05 · 常见问题</span></li>
+        <li><a href="/#updates">v4.8.2 导出流程重做要点</a><span class="t">11-05 · 更新记录</span></li>
+        <li><a href="/#guide">安装包 SHA-256 怎么校验</a><span class="t">11-04 · 体验指南</span></li>
+      </ul>
+    </div>
+    <div class="side-card">
+      <h3>版本速记</h3>
+      <ul class="side-list">
+        <li>当前版本 <b>v4.8.2</b><span class="t">2026-11-05 发布</span></li>
+        <li>上一稳定版 <b>v4.7.10</b><span class="t">2026-10-27 热修</span></li>
+        <li>授权说明版次 <b>2026-11-02</b><span class="t">旧版说明作废</span></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer class="sitefoot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/#top">
+          <svg viewBox="0 0 64 64" role="img" aria-label="艾彩标志">
+            <rect width="64" height="64" rx="14" fill="#f2b134"/>
+            <path d="M32 11l15 23-15 9-15-9z" fill="#14211c"/>
+            <circle cx="32" cy="47" r="6" fill="#14211c"/>
+          </svg>
+          <span>
+            <span class="bname">艾彩原创免费版最新版</span>
+            <span class="bsub">原创素材 · 免费授权</span>
+          </span>
+        </a>
+        <p>把原创素材的免费区间、导出能力与授权边界讲清楚，重点放在可核对的版本与条款记录。</p>
+      </div>
+      <div class="foot-col">
+        <h4>内容栏目</h4>
+        <ul>
+          <li><a href="/#overview">版本概览</a></li>
+          <li><a href="/#picks">精选内容推荐</a></li>
+          <li><a href="/#deep">授权深度解析</a></li>
+          <li><a href="/#guide">安装体验指南</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>使用与排查</h4>
+        <ul>
+          <li><a href="/#updates">最新更新记录</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#trust">可信度分层</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>素材频道</h4>
+        <ul>
+          <li><a href="/#picks">矢量图标</a></li>
+          <li><a href="/#picks">植物线描插画</a></li>
+          <li><a href="/#picks">竖版海报模板</a></li>
+          <li><a href="/#picks">字体搭配方案</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span>页面内素材条目、下载量与评论均为示例数据，用于说明功能与授权差异，不代表真实发行记录。</span>
+      <span>内容更新时间 2026-11-08，对应正文可核对项：v4.8.2 发布（11-05）、授权说明修订（11-02）、v4.7.10 热修（10-27）。</span>
+      <span>© 2026 艾彩原创免费版最新版 内容整理</span>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="回到顶部" title="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+  var menubtn = document.getElementById('menubtn');
+  var mainnav = document.getElementById('mainnav');
+  if(menubtn && mainnav){
+    menubtn.addEventListener('click', function(){
+      var open = mainnav.classList.toggle('open');
+      menubtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mainnav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.matchMedia('(max-width:1020px)').matches){
+        mainnav.classList.remove('open');
+        menubtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  var q = document.getElementById('q');
+  var qbtn = document.getElementById('qbtn');
+  var se = document.getElementById('se');
+
+  function search(){
+    var term = (q.value || '').trim();
+    if(!term){ se.style.display = 'none'; return; }
+    var blocks = document.querySelectorAll('#main section.block');
+    var hit = null;
+    for(var i = 0; i < blocks.length; i++){
+      var text = blocks[i].textContent || '';
+      if(text.indexOf(term) !== -1){ hit = blocks[i]; break; }
+    }
+    if(hit){
+      se.style.display = 'none';
+      var target = hit.id ? ('#' + hit.id) : null;
+      if(target){ location.hash = target; }
+      hit.style.transition = 'box-shadow .3s ease';
+      hit.style.boxShadow = '0 0 0 3px #f2b134';
+      setTimeout(function(){ hit.style.boxShadow = ''; }, 1600);
+    } else {
+      se.style.display = 'block';
+    }
+  }
+  if(qbtn){ qbtn.addEventListener('click', search); }
+  if(q){
+    q.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); search(); }
+    });
+  }
+
+  var totop = document.getElementById('totop');
+  var ticking = false;
+  function onScroll(){
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      if(totop){ totop.classList.toggle('show', y > 420); }
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  if(totop){
+    totop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  // 侧栏导航滚动高亮
+  var links = Array.prototype.slice.call(document.querySelectorAll('#sidenav a'));
+  var ids = links.map(function(a){ return a.getAttribute('href').replace('/#',''); });
+  var sections = ids.map(function(id){ return document.getElementById(id); }).filter(Boolean);
+  if('IntersectionObserver' in window && sections.length){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(a){ a.classList.remove('active'); });
+          var match = links.filter(function(a){
+            return a.getAttribute('href') === '/#' + en.target.id;
+          })[0];
+          if(match){ match.classList.add('active'); }
+        }
+      });
+    }, {rootMargin:'-130px 0px -65% 0px', threshold:0.01});
+    sections.forEach(function(s){ io.observe(s); });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "艾彩原创免费版最新版",
+  "inLanguage": "zh-CN",
+  "description": "整理艾彩原创免费版最新版的版本号、免费授权范围、导出能力、安装校验与社区反馈记录。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "免费版导出的素材能放进客户项目里吗？",
+      "acceptedAnswer": {"@type": "Answer", "text": "要看交付尺寸与是否对外商业交付。2400px 以内的个人发布可以；客户项目对外交付属于商业用途，需要订阅或书面许可，登记只是备案。"}
+    },
+    {
+      "@type": "Question",
+      "name": "v4.8.2 为什么比 v4.7.9 的 WebP 导出慢？",
+      "acceptedAnswer": {"@type": "Answer", "text": "新版把有损质量预设拆成 60、75、90 三档，编码前多一次参数匹配。固定预设为 75 并关闭预览缩略图可回到旧速度。"}
+    },
+    {
+      "@type": "Question",
+      "name": "矢量图标能直接改描边宽度吗？",
+      "acceptedAnswer": {"@type": "Answer", "text": "72 枚线性图标在 SVG 里描边统一为 1.8px，编辑时把 stroke-width 改成 1px 或 2px 都在 24px 网格内对齐，不会错位。面性那套改描边无效，需要改填充。"}
+    },
+    {
+      "@type": "Question",
+      "name": "字体搭配方案里的商业字体要另买吗？",
+      "acceptedAnswer": {"@type": "Answer", "text": "方案本身免费，9 组里有 5 组依赖商业字库，具体字库名称与授权价格在字体依赖页，未购买前不要用于对外发布。"}
+    },
+    {
+      "@type": "Question",
+      "name": "Windows 11 上 SVG 预览白屏怎么处理？",
+      "acceptedAnswer": {"@type": "Answer", "text": "v4.7.10 已修复 mask 属性渲染不一致的问题。若仍在 4.7.9，升级到 4.8.2 即可；无法升级时把预览切换成 PNG 缩略图模式。"}
+    },
+    {
+      "@type": "Question",
+      "name": "授权登记记录能导出留档吗？",
+      "acceptedAnswer": {"@type": "Answer", "text": "能。授权历史页提供 CSV 导出，含登记时间、用途、成员数与备案编号，记录保存 24 个月。"}
+    }
+  ]
+}
+</script>
+</body>
+</html>
