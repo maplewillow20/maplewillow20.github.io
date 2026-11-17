@@ -1,0 +1,1048 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>一诺羞辱vk-事件脉络与玩家反应观察</title>
+<meta name="description" content="一诺羞辱vk事件梳理：从直播片段、录屏时间线到玩家社群回应，整理争议表态、可核对细节与观战体验指南，附常见问题与评论摘录。">
+<meta name="keywords" content="一诺羞辱vk">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2340'/%3E%3Cpath d='M18 44 L32 16 L46 44' stroke='%23f2b544' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='38' r='4' fill='%23e4572e'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f6f4ef;
+  --surface:#ffffff;
+  --ink:#1b2340;
+  --ink-2:#3b4568;
+  --muted:#6a7189;
+  --line:#dcd8ce;
+  --brand:#1b2340;
+  --accent:#e4572e;
+  --accent-2:#f2b544;
+  --teal:#2f6f6a;
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow:0 2px 6px rgba(27,35,64,.06),0 10px 28px rgba(27,35,64,.07);
+  --shadow-sm:0 1px 3px rgba(27,35,64,.08);
+  --space:24px;
+  --maxw:1200px;
+  --font:"Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
+  --announce-h:40px;
+  --head-h:66px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--announce-h) + var(--head-h) + 16px)}
+body{
+  margin:0;font-family:var(--font);background:var(--bg);color:var(--ink);
+  line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;line-height:1.35;letter-spacing:.2px}
+p{margin:0 0 14px}
+ul,ol{margin:0;padding-left:1.2em}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* 吸顶公告条 */
+.announce{
+  position:sticky;top:0;z-index:60;height:var(--announce-h);
+  background:linear-gradient(90deg,#1b2340,#2a3357 60%,#3a2a2a);
+  color:#f6f4ef;display:flex;align-items:center;justify-content:center;
+  font-size:13.5px;letter-spacing:.3px;padding:0 16px;
+}
+.announce strong{color:var(--accent-2);margin-right:8px;font-weight:700}
+.announce .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:8px;flex:none}
+
+/* 吸顶页头 */
+.site-head{
+  position:sticky;top:var(--announce-h);z-index:55;
+  background:rgba(255,255,255,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{
+  max-width:var(--maxw);margin:0 auto;height:var(--head-h);
+  display:flex;align-items:center;gap:20px;padding:0 20px;
+}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand svg{width:34px;height:34px;flex:none}
+.brand-text{font-weight:800;font-size:19px;letter-spacing:.5px;color:var(--brand);white-space:nowrap}
+.nav-main{display:flex;gap:4px;align-items:center;flex:1;overflow:visible}
+.nav-main a{
+  padding:7px 11px;border-radius:7px;font-size:14.5px;color:var(--ink-2);
+  white-space:nowrap;transition:background .18s,color .18s;
+}
+.nav-main a:hover{background:#f0ede5;color:var(--brand)}
+.nav-main a.is-active{background:var(--brand);color:#fff}
+.head-actions{display:flex;align-items:center;gap:10px;flex:none}
+.search-box{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:#fff;padding:3px 4px 3px 12px}
+.search-box input{
+  border:0;outline:0;background:transparent;font-size:14px;width:150px;padding:5px 2px;color:var(--ink);
+}
+.search-box button{
+  border:0;background:var(--brand);color:#fff;border-radius:999px;
+  width:30px;height:30px;display:grid;place-items:center;flex:none;
+}
+.search-box button:hover{background:#2a3357}
+.search-feedback{font-size:12.5px;color:var(--accent);max-width:180px;line-height:1.3}
+.menu-toggle{display:none;border:1px solid var(--line);background:#fff;border-radius:9px;width:42px;height:38px;place-items:center}
+.menu-toggle svg{width:20px;height:20px}
+
+/* 首屏 */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(1100px 420px at 88% -12%,rgba(242,181,68,.22),transparent 60%),
+    radial-gradient(760px 420px at 4% 108%,rgba(228,87,46,.14),transparent 62%),
+    linear-gradient(160deg,#1b2340 0%,#232c4d 52%,#2c2030 100%);
+  color:#f6f4ef;
+}
+.hero-inner{
+  max-width:var(--maxw);margin:0 auto;padding:58px 20px 62px;
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:44px;align-items:center;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.5px;
+  border:1px solid rgba(242,181,68,.5);color:var(--accent-2);border-radius:999px;padding:5px 13px;margin-bottom:18px;
+}
+.hero h1{font-size:clamp(30px,4.4vw,50px);letter-spacing:1px;font-weight:800;margin-bottom:16px}
+.hero-lead{font-size:16.5px;color:#d7d4cc;max-width:560px;margin-bottom:24px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:999px;
+  font-size:14.5px;font-weight:600;transition:transform .18s,box-shadow .18s,background .18s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 20px rgba(228,87,46,.28)}
+.btn-primary:hover{background:#d14823}
+.btn-ghost{border:1px solid rgba(246,244,239,.4);color:#f6f4ef}
+.btn-ghost:hover{background:rgba(246,244,239,.1)}
+.hero-stats{display:flex;gap:30px;flex-wrap:wrap}
+.hero-stats div{min-width:86px}
+.hero-stats b{display:block;font-size:24px;color:var(--accent-2);line-height:1.1;font-variant-numeric:tabular-nums}
+.hero-stats span{font-size:12.5px;color:#a9adc0;letter-spacing:.5px}
+
+/* 首屏原创视觉 */
+.hero-visual{position:relative;height:330px}
+.vs-stage{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch}
+.vs-card{
+  border-radius:18px;padding:16px;display:flex;flex-direction:column;justify-content:space-between;
+  border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);
+  backdrop-filter:blur(3px);min-width:0;
+}
+.vs-card .who{font-size:13px;letter-spacing:1px;color:#c9c6be}
+.vs-card .who b{display:block;font-size:17px;color:#fff;letter-spacing:.5px;margin-top:2px}
+.vs-card .n{font-size:38px;font-weight:800;color:var(--accent-2);font-variant-numeric:tabular-nums;line-height:1}
+.vs-card .m{font-size:12px;color:#a9adc0;margin-top:4px}
+.vs-card.alt .n{color:#ff8f6e}
+.vs-mid{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  background:#f6f4ef;color:#1b2340;font-weight:800;font-size:13px;letter-spacing:1px;
+  padding:7px 13px;border-radius:999px;box-shadow:0 8px 22px rgba(0,0,0,.35);white-space:nowrap;
+}
+.vs-bar{position:absolute;left:0;right:0;bottom:0;height:8px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden;display:flex}
+.vs-bar i{display:block;height:100%}
+.vs-bar i:first-child{width:58%;background:var(--accent-2)}
+.vs-bar i:last-child{width:42%;background:var(--accent)}
+.hero-visual::after{
+  content:"";position:absolute;right:-26px;top:-22px;width:110px;height:110px;border-radius:50%;
+  border:1px dashed rgba(242,181,68,.45);
+}
+
+/* 主内容 */
+.layout{
+  max-width:var(--maxw);margin:0 auto;padding:42px 20px 70px;
+  display:grid;grid-template-columns:minmax(0,1fr) 316px;gap:34px;align-items:start;
+}
+.main-col{min-width:0;display:flex;flex-direction:column;gap:34px}
+.side-col{min-width:0;display:flex;flex-direction:column;gap:22px;position:sticky;top:calc(var(--announce-h) + var(--head-h) + 18px)}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 26px 24px;box-shadow:var(--shadow-sm)}
+.panel-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.panel-head h2{font-size:21px;font-weight:800;letter-spacing:.3px;display:flex;align-items:center;gap:9px}
+.panel-head h2::before{content:"";width:5px;height:20px;border-radius:3px;background:var(--accent);flex:none}
+.panel-head .more{font-size:13px;color:var(--muted);border-bottom:1px dashed var(--line)}
+.panel-head .more:hover{color:var(--accent);border-color:var(--accent)}
+.sub{font-size:13.5px;color:var(--muted)}
+
+/* 概览四格 */
+.overview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.ov-item{border:1px solid var(--line);border-radius:var(--radius-sm);padding:15px 16px;background:#fbfaf6;transition:transform .18s,box-shadow .18s}
+.ov-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+.ov-item h3{font-size:15.5px;margin-bottom:6px}
+.ov-item p{font-size:13.5px;color:var(--ink-2);margin:0}
+.ov-item .num{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:1px}
+
+/* 精选卡片 */
+.card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.card img{width:100%;height:150px;object-fit:cover}
+.card-body{padding:15px 16px 17px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card-body h3{font-size:16px;line-height:1.45}
+.card-body p{font-size:13.5px;color:var(--ink-2);margin:0;flex:1}
+.card-meta{font-size:12px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.chip{display:inline-block;font-size:11.5px;padding:2px 9px;border-radius:999px;background:#f0ede5;color:var(--ink-2);letter-spacing:.3px}
+.chip.hot{background:#fde4dc;color:#b43a19}
+.chip.calm{background:#e2eeec;color:var(--teal)}
+
+/* 紧凑列表 */
+.tight-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column}
+.tight-list li{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:11px 0;border-bottom:1px dashed var(--line)}
+.tight-list li:last-child{border-bottom:0;padding-bottom:0}
+.tight-list time{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tight-list a{font-size:14.5px;color:var(--ink);line-height:1.5}
+.tight-list a:hover{color:var(--accent)}
+.tight-list .tag{font-size:11.5px;color:var(--muted);white-space:nowrap}
+
+/* 分类索引 */
+.cat-index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.cat-index a{
+  display:flex;justify-content:space-between;align-items:center;gap:6px;
+  border:1px solid var(--line);border-radius:var(--radius-sm);padding:11px 13px;font-size:14px;
+  background:#fff;transition:border-color .18s,background .18s,transform .18s;
+}
+.cat-index a:hover{border-color:var(--accent);background:#fffaf7;transform:translateY(-2px)}
+.cat-index em{font-style:normal;font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* 深度解析 */
+.deep{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow-sm)}
+.deep h2{font-size:23px;margin-bottom:8px}
+.deep .deep-lead{color:var(--ink-2);font-size:15px;margin-bottom:22px}
+.deep h3{font-size:17.5px;margin:26px 0 10px;padding-left:12px;border-left:4px solid var(--accent);line-height:1.5}
+.deep p{font-size:15px;color:var(--ink-2)}
+.deep p strong{color:var(--ink)}
+.deep blockquote{
+  margin:18px 0;padding:14px 18px;background:#fbf7ee;border-left:4px solid var(--accent-2);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:14.5px;color:var(--ink-2);
+}
+.deep blockquote cite{display:block;font-size:12.5px;color:var(--muted);font-style:normal;margin-top:6px}
+.verify-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:14px 0 20px}
+.verify-table th,.verify-table td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+.verify-table th{background:#f4f1e9;font-weight:700;color:var(--ink);white-space:nowrap}
+.verify-table td{color:var(--ink-2)}
+.verify-table caption{caption-side:top;text-align:left;font-size:12.5px;color:var(--muted);padding-bottom:6px}
+
+/* 步骤 */
+.steps{list-style:none;padding:0;margin:0;counter-reset:st;display:flex;flex-direction:column;gap:14px}
+.steps li{position:relative;padding-left:52px;counter-increment:st}
+.steps li::before{
+  content:counter(st,decimal-leading-zero);position:absolute;left:0;top:0;
+  width:38px;height:38px;border-radius:12px;background:var(--brand);color:var(--accent-2);
+  display:grid;place-items:center;font-weight:800;font-size:14px;letter-spacing:.5px;
+}
+.steps h3{font-size:15.5px;margin-bottom:4px}
+.steps p{font-size:13.5px;color:var(--ink-2);margin:0}
+
+/* 对照面板 */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden}
+.compare>div{padding:17px 18px}
+.compare>div:first-child{background:#fbfaf6;border-right:1px solid var(--line)}
+.compare h3{font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.compare ul{font-size:13.5px;color:var(--ink-2);display:flex;flex-direction:column;gap:7px}
+.compare .mark-y{color:var(--teal);font-weight:700}
+.compare .mark-n{color:var(--accent);font-weight:700}
+
+/* FAQ */
+.faq details{border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:10px;background:#fff;overflow:hidden}
+.faq details[open]{border-color:#c9c3b4;background:#fdfcf9}
+.faq summary{
+  list-style:none;cursor:pointer;padding:14px 46px 14px 16px;font-size:15px;font-weight:600;
+  position:relative;line-height:1.55;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);
+  font-size:20px;font-weight:400;color:var(--muted);transition:transform .2s;
+}
+.faq details[open] summary::after{content:"–";color:var(--accent)}
+.faq .ans{padding:0 16px 15px;font-size:14px;color:var(--ink-2)}
+.faq .ans p{margin:0}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.cmt{border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 15px;background:#fbfaf6;display:flex;flex-direction:column;gap:8px}
+.cmt .u{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--muted)}
+.cmt .av{width:28px;height:28px;border-radius:50%;background:var(--brand);color:var(--accent-2);display:grid;place-items:center;font-size:12px;font-weight:700;flex:none}
+.cmt p{font-size:13.8px;color:var(--ink-2);margin:0}
+.cmt .quote{font-size:12.5px;color:var(--teal);border-left:3px solid #cfe0dd;padding-left:9px}
+
+/* 资讯 */
+.news-list{display:flex;flex-direction:column;gap:0}
+.news-item{padding:14px 0;border-bottom:1px dashed var(--line)}
+.news-item:first-child{padding-top:0}
+.news-item:last-child{border-bottom:0;padding-bottom:0}
+.news-item h3{font-size:15.5px;margin-bottom:4px}
+.news-item h3 a:hover{color:var(--accent)}
+.news-item p{font-size:13.5px;color:var(--ink-2);margin:0}
+.news-item .meta{font-size:12px;color:var(--muted);margin-top:5px;display:flex;gap:12px;flex-wrap:wrap}
+
+/* 推荐标签 */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:9px}
+.tag-cloud a{
+  font-size:13.5px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink-2);
+  transition:all .18s;
+}
+.tag-cloud a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.tag-cloud a small{color:var(--muted);margin-left:5px;font-size:11px}
+
+/* 时间线 */
+.timeline{position:relative;padding-left:22px;margin:0;list-style:none}
+.timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent-2),var(--accent))}
+.timeline li{position:relative;padding:0 0 16px 4px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-21px;top:7px;width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid var(--accent)}
+.timeline time{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.5px}
+.timeline b{display:block;font-size:14.5px;margin:2px 0 3px}
+.timeline span{font-size:13.3px;color:var(--ink-2)}
+
+/* 侧栏 */
+.side-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-sm)}
+.side-panel h2{font-size:16px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.side-panel h2::before{content:"";width:4px;height:16px;border-radius:2px;background:var(--accent-2)}
+.side-nav{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:2px}
+.side-nav a{display:block;padding:8px 11px;border-radius:8px;font-size:14px;color:var(--ink-2);border-left:3px solid transparent;transition:all .16s}
+.side-nav a:hover{background:#f3f0e8;color:var(--ink)}
+.side-nav a.active{background:#f0ede5;color:var(--brand);font-weight:700;border-left-color:var(--accent)}
+.side-stat{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.side-stat div{background:#fbfaf6;border:1px solid var(--line);border-radius:var(--radius-sm);padding:11px 12px}
+.side-stat b{display:block;font-size:19px;color:var(--brand);font-variant-numeric:tabular-nums}
+.side-stat span{font-size:11.5px;color:var(--muted)}
+.side-quote{font-size:13.5px;color:var(--ink-2);border-left:3px solid var(--accent-2);padding-left:12px;margin:0}
+.side-quote cite{display:block;color:var(--muted);font-size:12px;font-style:normal;margin-top:6px}
+
+/* 页脚 */
+.site-foot{background:var(--brand);color:#cfd2dd;margin-top:20px}
+.foot-inner{max-width:var(--maxw);margin:0 auto;padding:44px 20px 26px}
+.foot-top{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:30px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.14)}
+.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.foot-brand svg{width:32px;height:32px}
+.foot-brand b{color:#fff;font-size:18px;letter-spacing:.5px}
+.foot-desc{font-size:13.5px;color:#a9adc0;max-width:280px}
+.foot-group h3{font-size:14px;color:var(--accent-2);margin-bottom:12px;letter-spacing:.5px}
+.foot-group ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.foot-group a{font-size:13.5px;color:#cfd2dd;transition:color .16s}
+.foot-group a:hover{color:#fff}
+.foot-bottom{padding-top:20px;font-size:12.5px;color:#8b90a5;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;line-height:1.7}
+.foot-bottom .upd{color:#a9adc0}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:20px;bottom:22px;z-index:70;width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--line);background:#fff;color:var(--brand);display:grid;place-items:center;
+  box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(10px);transition:all .22s;
+}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:var(--brand);color:#fff}
+
+/* 平板 */
+@media (max-width:1024px){
+  .layout{grid-template-columns:1fr}
+  .side-col{position:static;order:2}
+  .main-col{order:1}
+  .hero-inner{grid-template-columns:1fr;gap:30px;padding:44px 20px 50px}
+  .hero-visual{height:290px;max-width:520px}
+  .foot-top{grid-template-columns:1fr 1fr}
+  .nav-main{display:none}
+  .menu-toggle{display:grid}
+  .nav-main.open{
+    display:flex;position:absolute;left:0;right:0;top:var(--head-h);
+    background:#fff;flex-direction:column;align-items:stretch;padding:10px 16px 16px;
+    border-bottom:1px solid var(--line);box-shadow:var(--shadow);gap:2px;
+  }
+  .nav-main.open a{padding:11px 12px}
+  .head-inner{position:relative;gap:12px}
+  .search-box input{width:110px}
+}
+/* 手机 */
+@media (max-width:640px){
+  :root{--space:16px;--announce-h:auto;--head-h:60px}
+  .announce{height:auto;min-height:36px;padding:7px 14px;font-size:12px;line-height:1.5;text-align:center;position:static}
+  .site-head{top:0}
+  .head-inner{padding:0 14px;gap:8px}
+  .brand-text{font-size:16.5px}
+  .brand svg{width:29px;height:29px}
+  .search-box{display:none}
+  .search-feedback{display:none}
+  .layout{padding:26px 14px 56px;gap:22px}
+  .panel{padding:20px 16px}
+  .hero-inner{padding:34px 16px 40px}
+  .hero h1{font-size:29px}
+  .hero-lead{font-size:15px}
+  .hero-visual{height:230px}
+  .vs-card{padding:11px}
+  .vs-card .n{font-size:27px}
+  .vs-card .who b{font-size:14px}
+  .overview-grid,.card-grid,.comments,.compare{grid-template-columns:1fr}
+  .cat-index{grid-template-columns:1fr 1fr}
+  .tight-list li{grid-template-columns:52px minmax(0,1fr);gap:9px}
+  .tight-list .tag{grid-column:2;font-size:11px}
+  .deep{padding:20px 16px}
+  .deep h2{font-size:20px}
+  .compare>div:first-child{border-right:0;border-bottom:1px solid var(--line)}
+  .verify-table{font-size:12.5px}
+  .verify-table th,.verify-table td{padding:7px 8px}
+  .foot-top{grid-template-columns:1fr;gap:22px}
+  .to-top{right:14px;bottom:16px;width:42px;height:42px}
+  .hero-stats{gap:20px}
+  .hero-stats b{font-size:20px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .btn:hover,.card:hover,.ov-item:hover,.cat-index a:hover,.tag-cloud a:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="announce">
+  <span class="dot"></span>
+  <strong>更新</strong> 11月6日 22:40 VK 直播间完整回放补齐第 3 段，弹幕对“羞辱”一词的用法出现两种解读
+</div>
+
+<header class="site-head">
+  <div class="head-inner">
+    <a class="brand" href="/#top" aria-label="一诺羞辱vk 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="15" fill="#1b2340"/>
+        <path d="M17 45 L32 15 L47 45" stroke="#f2b544" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="32" cy="38" r="4.4" fill="#e4572e"/>
+      </svg>
+      <span class="brand-text">一诺羞辱vk</span>
+    </a>
+    <nav class="nav-main" id="mainNav" aria-label="主题导航">
+      <a href="/#overview">事件概览</a>
+      <a href="/#featured">精选内容</a>
+      <a href="/#updates">最新更新</a>
+      <a href="/#channels">分类频道</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">观战指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">观众评论</a>
+    </nav>
+    <div class="head-actions">
+      <div class="search-box">
+        <input id="searchInput" type="search" placeholder="查条目 / 主播 / 时间" aria-label="站内查找">
+        <button id="searchBtn" aria-label="搜索">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+        </button>
+      </div>
+      <div class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></div>
+      <button class="menu-toggle" id="menuToggle" aria-label="展开导航菜单" aria-expanded="false" aria-controls="mainNav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-tag">事件观察 · 2026-11-08</span>
+      <h1>一诺羞辱vk</h1>
+      <p class="hero-lead">从 10 月 31 日直播对局到 11 月 6 日回放补档，围绕“羞辱”一词的用法、当事人回应与观众录屏证据，整理可核对的片段时间、各方说法差异，以及看直播切片的实用方法。</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="/#deep">读深度解析
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="/#updates">看最新更新</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>6</b><span>关键片段</span></div>
+        <div><b>4</b><span>当事方回应</span></div>
+        <div><b>2</b><span>说法版本</span></div>
+        <div><b>18</b><span>可核对条目</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="vs-stage">
+        <div class="vs-card">
+          <div class="who">持方 A<b>一诺</b></div>
+          <div><div class="n">31:12</div><div class="m">回放第 3 段起始</div></div>
+        </div>
+        <div class="vs-card alt">
+          <div class="who">持方 B<b>vk</b></div>
+          <div><div class="n">58%</div><div class="m">观众投票解读倾向</div></div>
+        </div>
+      </div>
+      <div class="vs-mid">片段 · 回放 · 回应</div>
+      <div class="vs-bar"><i></i><i></i></div>
+    </div>
+  </div>
+</section>
+
+<div class="layout" id="content">
+
+  <main class="main-col">
+
+    <!-- 领域概览 -->
+    <section class="panel" id="overview">
+      <div class="panel-head">
+        <h2>事件概览：先分清四个层面</h2>
+        <span class="sub">10月31日—11月7日</span>
+      </div>
+      <div class="overview-grid">
+        <div class="ov-item">
+          <div class="num">01 · 事实层</div>
+          <h3>直播对局里的原话</h3>
+          <p>10 月 31 日 21:47，一诺在排位对局中连续三次评价对手操作，原话含“羞辱”一词，弹幕在第 12 分钟集中出现争议。</p>
+        </div>
+        <div class="ov-item">
+          <div class="num">02 · 回应层</div>
+          <h3>vk 的公开说法</h3>
+          <p>11 月 2 日 18:20，vk 在动态里称“被点名的是阵容，不是个人”，并补充自己当天未开麦。</p>
+        </div>
+        <div class="ov-item">
+          <div class="num">03 · 转述层</div>
+          <h3>剪辑号的二创版本</h3>
+          <p>11 月 3 日至 5 日，至少 9 个剪辑号发布 40 秒至 2 分钟版本，其中 3 个版本删去了前置对局上下文。</p>
+        </div>
+        <div class="ov-item">
+          <div class="num">04 · 推测层</div>
+          <h3>动机与阵营猜测</h3>
+          <p>“刻意针对”属观众推测，暂无直播间后台记录或私信截图公开，判断时宜与录屏原片分开看。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 精选内容 -->
+    <section class="panel" id="featured">
+      <div class="panel-head">
+        <h2>精选内容推荐</h2>
+        <a class="more" href="/#deep">深度解析 →</a>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <img src="https://picsum.photos/seed/yinuo-vk-replay/560/320" width="560" height="320" loading="lazy" alt="直播回放界面截图，时间轴停在31分12秒处">
+          <div class="card-body">
+            <div class="card-meta"><span class="chip hot">核心片段</span><span>11月6日</span></div>
+            <h3>回放第 3 段 31:12：三次评价的完整上下文</h3>
+            <p>前后 4 分钟对话补齐，能看清一诺说的是阵容克制，而非直接点名 vk 个人。</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/vk-response-note/560/320" width="560" height="320" loading="lazy" alt="社交平台动态截图，vk发布回应文字">
+          <div class="card-body">
+            <div class="card-meta"><span class="chip calm">当事方回应</span><span>11月2日</span></div>
+            <h3>vk 回应原帖逐句拆：哪句是澄清，哪句是态度</h3>
+            <p>动态共 186 字，其中 74 字涉及“未开麦”说明，剩余部分为对剪辑号的反驳。</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/stream-clip-list/560/320" width="560" height="320" loading="lazy" alt="剪辑号列表页，多个短视频封面排列">
+          <div class="card-body">
+            <div class="card-meta"><span class="chip">二创对照</span><span>11月3日—5日</span></div>
+            <h3>9 个剪辑版本时长表：40 秒版丢了什么</h3>
+            <p>最短版本 38 秒，删去阵容说明和前一局战况，信息密度差出 3 倍。</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/audience-vote/560/320" width="560" height="320" loading="lazy" alt="观众投票结果条形图，两种解读比例">
+          <div class="card-body">
+            <div class="card-meta"><span class="chip">投票数据</span><span>11月7日</span></div>
+            <h3>4276 票里，58% 认为“羞辱”指阵容强度</h3>
+            <p>投票选项未设“不清楚”，存在被迫二选一的方法问题，解读时需打折。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 最新更新 -->
+    <section class="panel" id="updates">
+      <div class="panel-head">
+        <h2>最新更新</h2>
+        <span class="sub">按时间倒序</span>
+      </div>
+      <ul class="tight-list">
+        <li><time>11月7日</time><a href="/#comments">观众投票帖新增 312 票，选项“两种解读都合理”被临时加入</a><span class="tag">投票</span></li>
+        <li><time>11月6日</time><a href="/#deep">回放第 3 段补齐，31:12—34:50 共 3 分 38 秒对话可听清</a><span class="tag">回放</span></li>
+        <li><time>11月5日</time><a href="/#featured">剪辑号“夜猫切片”删除 40 秒版本并发布更正说明</a><span class="tag">二创</span></li>
+        <li><time>11月4日</time><a href="/#guide">直播切片观看指南更新：如何定位原片时间轴</a><span class="tag">指南</span></li>
+        <li><time>11月3日</time><a href="/#deep">vk 队友“小满”在语音频道表示当天阵容由自己提出</a><span class="tag">证言</span></li>
+        <li><time>11月2日</time><a href="/#featured">vk 发布 186 字回应动态，否认被针对</a><span class="tag">回应</span></li>
+        <li><time>10月31日</time><a href="/#overview">一诺直播对局出现“羞辱”一词，弹幕第 12 分钟起争议</a><span class="tag">源头</span></li>
+      </ul>
+    </section>
+
+    <!-- 分类入口 -->
+    <section class="panel" id="channels">
+      <div class="panel-head">
+        <h2>分类频道入口</h2>
+        <span class="sub">10 个栏目</span>
+      </div>
+      <div class="cat-index">
+        <a href="/#deep">直播回放时间轴<em>18条</em></a>
+        <a href="/#featured">一诺原话逐句<em>12条</em></a>
+        <a href="/#featured">vk 回应原文<em>6条</em></a>
+        <a href="/#updates">剪辑号版本差异<em>9条</em></a>
+        <a href="/#comments">弹幕争议节点<em>14条</em></a>
+        <a href="/#guide">切片观看方法<em>7条</em></a>
+        <a href="/#deep">阵容克制说明<em>5条</em></a>
+        <a href="/#comments">观众投票记录<em>4条</em></a>
+        <a href="/#news">第三方资讯<em>8条</em></a>
+        <a href="/#tags">相关人物档案<em>11条</em></a>
+      </div>
+    </section>
+
+    <!-- 深度解析 -->
+    <section class="deep" id="deep">
+      <h2>深度解析：争议真正卡在“指人”还是“指局”</h2>
+      <p class="deep-lead">把几段录屏按时间排开，能看到争议的核心不在用词本身，而在“羞辱”的宾语被剪辑换掉了。以下判断都可以拿原片逐句核对。</p>
+
+      <h3>31:12 的原话宾语是阵容，不是 vk 的 ID</h3>
+      <p>11 月 6 日补档的回放第 3 段里，一诺的原句是“这阵容打他们就是羞辱”。前文 30:41 处，他刚念完双方三路英雄，句子里没有出现 vk 的 ID，也没有出现“他”或“这个人”。<strong>把“羞辱”接在 vk 名字后面的版本，最早出现在 11 月 3 日 14:07 的一个 52 秒剪辑里</strong>，该版本在标题中直接写成“一诺羞辱vk”。这条时间差是判断转述是否偏移的最硬证据。</p>
+      <blockquote>“阵容压制成这样，说羞辱不冤；但把主语换成 vk，味道就变了。”<cite>—— 回放逐帧对照笔记，11月6日 23:10</cite></blockquote>
+
+      <h3>vk 的回应没有否认不快，只否认“被点名”</h3>
+      <p>11 月 2 日 18:20 的动态里，vk 写了两段。第一段说“当天没开麦，不存在对线”，第二段说“阵容是他们自己提的”。两段都指向同一件事：他认为被讨论的是对局安排。<strong>回应未出现“我不介意”或“无所谓”这类措辞</strong>，说明不快可能存在，只是争点被移到了“是否被直接针对”。把回应读成“完全没事”是过度解读，读成“实锤被羞辱”同样越界。</p>
+
+      <h3>三份材料能拼出的可核对结构</h3>
+      <table class="verify-table">
+        <caption>下表只列有原片或截图支撑的条目，推测项单列在最后一行</caption>
+        <thead>
+          <tr><th>核对项</th><th>材料</th><th>结论边界</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>“羞辱”宾语</td><td>回放 31:12 原声</td><td>指向阵容，句中无 vk ID</td></tr>
+          <tr><td>直播是否开麦</td><td>vk 动态，11月2日</td><td>自称未开麦，无第三方交叉</td></tr>
+          <tr><td>阵容由谁提出</td><td>队友小满语音，11月3日</td><td>单方证言，未获一诺方确认</td></tr>
+          <tr><td>剪辑最早改写时间</td><td>52 秒版本发布时间</td><td>11月3日 14:07，早于回放补档</td></tr>
+          <tr><td>是否刻意针对</td><td>无后台记录</td><td>属推测，不作结论</td></tr>
+        </tbody>
+      </table>
+
+      <p>一个常被忽略的细节：11 月 1 日 20:15，一诺在另一场直播里被问到这个话题，回答只有一句“我说的是阵容”，时长 4 秒。这句话与 31:12 原声能对上，<strong>但它出现在争议发酵之后，说服力弱于原片本身</strong>。判断顺序应当是原片优先、当事方解释其次、剪辑版本最后，而不是反过来。</p>
+    </section>
+
+    <!-- 体验指南 -->
+    <section class="panel" id="guide">
+      <div class="panel-head">
+        <h2>观战指南：四步定位原片</h2>
+        <span class="sub">适用于各平台回放</span>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>先找完整回放，不看 40 秒剪辑</h3>
+          <p>11 月 6 日补档版本总长 2 小时 14 分，第 3 段从 31:12 开始，这一段是唯一含完整上下文的公开版本。</p>
+        </li>
+        <li>
+          <h3>把时间轴停在 30:41，听英雄名</h3>
+          <p>此处能听到双方三路英雄被逐个念出，是确认“羞辱”宾语为阵容的关键前置句。</p>
+        </li>
+        <li>
+          <h3>对照 11 月 3 日的 52 秒版本</h3>
+          <p>两版并排，能看到 52 秒版把 30:41 的前置句整段跳过，标题直接改写主语。</p>
+        </li>
+        <li>
+          <h3>把 vk 回应原文与投票结果分开记录</h3>
+          <p>回应是当事方陈述，投票是观众倾向，两者都进不了事实层，只作参考层。</p>
+        </li>
+      </ol>
+      <div class="compare" style="margin-top:20px">
+        <div>
+          <h3><span class="mark-y">✓</span> 可核对的做法</h3>
+          <ul>
+            <li>用完整回放时间轴定位原话</li>
+            <li>记录剪辑发布的具体日期与时长</li>
+            <li>把当事方动态保存为截图原件</li>
+            <li>投票结果标注样本量与选项设置</li>
+          </ul>
+        </div>
+        <div>
+          <h3><span class="mark-n">✕</span> 容易误判的做法</h3>
+          <ul>
+            <li>只看标题含全称的剪辑</li>
+            <li>把弹幕刷屏当作当事人表态</li>
+            <li>用“很多人都说”替代原片</li>
+            <li>把推测动机写进时间线</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="panel faq" id="faq">
+      <div class="panel-head">
+        <h2>常见问题</h2>
+        <span class="sub">8 个高频疑问</span>
+      </div>
+      <details>
+        <summary>“羞辱”一词在原片里到底指什么？</summary>
+        <div class="ans"><p>指双方阵容强度差距。30:41 处念完三路英雄后，31:12 接上“这阵容打他们就是羞辱”，句中没出现 vk 的 ID。补档回放可逐句核对。</p></div>
+      </details>
+      <details>
+        <summary>vk 当天有没有开麦对线？</summary>
+        <div class="ans"><p>vk 在 11 月 2 日动态里称自己未开麦，目前没有第三方语音记录公开。该说法为单方陈述，只能作为回应层材料，不能直接当事实。</p></div>
+      </details>
+      <details>
+        <summary>52 秒剪辑版和完整回放差在哪里？</summary>
+        <div class="ans"><p>52 秒版删去了 30:41 的英雄列举和前一局战况，标题直接写成“一诺羞辱vk”。发布时间为 11 月 3 日 14:07，早于 11 月 6 日补档。</p></div>
+      </details>
+      <details>
+        <summary>队友小满说的“阵容自己提的”可信吗？</summary>
+        <div class="ans"><p>属单方证言。11 月 3 日语音频道里小满表示阵容由自己提出，一诺方未公开确认，也没有聊天记录截图。可作参考，不宜当定论。</p></div>
+      </details>
+      <details>
+        <summary>4276 票的投票结果能说明什么？</summary>
+        <div class="ans"><p>只能说明参与者的即时倾向。原始选项只有两项，11 月 7 日才加入“两种解读都合理”，样本结构和选项设置都影响结论，58% 这个数字需要打折看。</p></div>
+      </details>
+      <details>
+        <summary>一诺 11 月 1 日的回应算不算道歉？</summary>
+        <div class="ans"><p>不算。原话仅 4 秒“我说的是阵容”，属于解释而非致歉，且出现在争议发酵之后，证明力弱于 31:12 原片。</p></div>
+      </details>
+      <details>
+        <summary>为什么同一事件会出现两种完全相反的解读？</summary>
+        <div class="ans"><p>因为“羞辱”的宾语在传播中被替换了。原片宾语是阵容，剪辑标题宾语是 vk，两个版本各自内部自洽，所以争论往往不在同一层面上。</p></div>
+      </details>
+      <details>
+        <summary>想自己核对，最少要看哪几份材料？</summary>
+        <div class="ans"><p>三份：11 月 6 日补档回放第 3 段、11 月 3 日 52 秒剪辑版、11 月 2 日 vk 动态原文。三份按时间排开，差异点一目了然。</p></div>
+      </details>
+    </section>
+
+    <!-- 用户评论 -->
+    <section class="panel" id="comments">
+      <div class="panel-head">
+        <h2>观众评论</h2>
+        <span class="sub">来自回放讨论区</span>
+      </div>
+      <div class="comments">
+        <div class="cmt">
+          <div class="u"><span class="av">林</span>林间有雾 · 11月6日</div>
+          <p class="quote">“31:12 那句我反复听了五遍，确实是在说阵容。”</p>
+          <p>补档之后争议该降温了。剪辑号把宾语换掉，才是这次吵起来的直接原因。</p>
+        </div>
+        <div class="cmt">
+          <div class="u"><span class="av">七</span>七号观众 · 11月6日</div>
+          <p>阵容说辞能解释字面，解释不了语气。连着三次提同一件事，听感上就是不舒服，这点我不改。</p>
+        </div>
+        <div class="cmt">
+          <div class="u"><span class="av">K</span>Kite_09 · 11月5日</div>
+          <p class="quote">“52 秒版我也看了，标题确实写的是 vk。”</p>
+          <p>但底下评论没几个人提标题问题，都在吵立场。信息传播这块比事件本身更值得记一笔。</p>
+        </div>
+        <div class="cmt">
+          <div class="u"><span class="av">阿</span>阿柴不熬夜 · 11月4日</div>
+          <p>小满那段语音我听了，声音是真的，但没录到前因。单凭一句“阵容我提的”，说服力有限。</p>
+        </div>
+        <div class="cmt">
+          <div class="u"><span class="av">月</span>月见草 · 11月3日</div>
+          <p>投票那个选项设置有问题，两项都是对立面，想选中立只能等第二天加选项。58% 这个数先别急着引用。</p>
+        </div>
+        <div class="cmt">
+          <div class="u"><span class="av">老</span>老K的耳机 · 11月3日</div>
+          <p class="quote">“vk 那条动态我截了原图，186 字，没有一句说‘不介意’。”</p>
+          <p>读成没事发生的，估计只看过二手转述。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 相关资讯 -->
+    <section class="panel" id="news">
+      <div class="panel-head">
+        <h2>相关资讯</h2>
+        <span class="sub">第三方报道与平台动态</span>
+      </div>
+      <div class="news-list">
+        <article class="news-item">
+          <h3><a href="/#deep">直播回放平台 11 月 6 日上线分段存档功能</a></h3>
+          <p>该功能把长回放切成若干段并保留原始时间戳，本次补档的第 3 段即由该功能生成。</p>
+          <div class="meta"><span>平台公告</span><span>11月6日</span></div>
+        </article>
+        <article class="news-item">
+          <h3><a href="/#updates">剪辑号“夜猫切片”删稿并发布 210 字更正说明</a></h3>
+          <p>说明中承认标题改写主语，但未提及是否与当事方沟通。原 40 秒视频已不可见。</p>
+          <div class="meta"><span>账号动态</span><span>11月5日</span></div>
+        </article>
+        <article class="news-item">
+          <h3><a href="/#comments">玩家社区发起“原片优先”倡议帖，附 6 条核对清单</a></h3>
+          <p>倡议帖列出先看回放、再读回应、最后看剪辑的顺序，跟帖 400 余条，多为方法讨论。</p>
+          <div class="meta"><span>社区帖子</span><span>11月4日</span></div>
+        </article>
+        <article class="news-item">
+          <h3><a href="/#overview">对局数据站公开 10 月 31 日双方阵容胜率对比</a></h3>
+          <p>数据显示该阵容组合在该分段胜率 61.3%，与“阵容压制”的说法方向一致，但样本仅 214 场。</p>
+          <div class="meta"><span>数据站</span><span>11月2日</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 相关推荐 -->
+    <section class="panel" id="tags">
+      <div class="panel-head">
+        <h2>相关推荐</h2>
+        <span class="sub">按浏览与讨论热度</span>
+      </div>
+      <div class="tag-cloud">
+        <a href="/#deep">一诺直播回放31分12秒<small>18</small></a>
+        <a href="/#featured">vk回应动态原图<small>12</small></a>
+        <a href="/#updates">52秒剪辑版差异<small>9</small></a>
+        <a href="/#comments">弹幕争议节点<small>14</small></a>
+        <a href="/#guide">切片观看四步法<small>7</small></a>
+        <a href="/#deep">阵容克制胜率数据<small>5</small></a>
+        <a href="/#comments">4276票解读倾向<small>4</small></a>
+        <a href="/#deep">队友小满语音证言<small>6</small></a>
+        <a href="/#news">夜猫切片更正说明<small>3</small></a>
+        <a href="/#guide">直播回放分段存档<small>8</small></a>
+      </div>
+    </section>
+
+    <!-- 补充板块：时间线 -->
+    <section class="panel" id="timeline">
+      <div class="panel-head">
+        <h2>事件时间线</h2>
+        <span class="sub">只有一次记录的关键节点</span>
+      </div>
+      <ol class="timeline">
+        <li>
+          <time>10月31日 21:47</time>
+          <b>直播对局出现“羞辱”一词</b>
+          <span>连续三次评价对手阵容，弹幕第 12 分钟开始集中讨论，当场未形成一方共识。</span>
+        </li>
+        <li>
+          <time>11月1日 20:15</time>
+          <b>一诺另一直播回应 4 秒</b>
+          <span>“我说的是阵容。”未展开，也未提到 vk，属于争议发酵后的解释。</span>
+        </li>
+        <li>
+          <time>11月2日 18:20</time>
+          <b>vk 发布 186 字动态</b>
+          <span>否认被点名，强调当天未开麦。分两段写，前段说明对线情况，后段反驳剪辑。</span>
+        </li>
+        <li>
+          <time>11月3日 14:07</time>
+          <b>52 秒剪辑版发布</b>
+          <span>标题首次把“羞辱”接到 vk 名字后，删去 30:41 的英雄列举前置句。</span>
+        </li>
+        <li>
+          <time>11月3日 22:30</time>
+          <b>队友小满语音证言流出</b>
+          <span>称阵容由自己提出，时长 41 秒，无前因录音。</span>
+        </li>
+        <li>
+          <time>11月6日 22:40</time>
+          <b>完整回放第 3 段补档</b>
+          <span>3 分 38 秒上下文可听清，成为重新核对的主要材料。</span>
+        </li>
+        <li>
+          <time>11月7日 11:05</time>
+          <b>投票加入第三选项</b>
+          <span>“两种解读都合理”上线，原 4276 票结构随之改变。</span>
+        </li>
+      </ol>
+    </section>
+
+  </main>
+
+  <!-- 侧栏：平板与手机置于主内容之后 -->
+  <aside class="side-col" aria-label="侧栏导航与信息">
+    <div class="side-panel">
+      <h2>栏目导航</h2>
+      <ul class="side-nav" id="sideNav">
+        <li><a href="/#overview">事件概览</a></li>
+        <li><a href="/#featured">精选内容推荐</a></li>
+        <li><a href="/#updates">最新更新</a></li>
+        <li><a href="/#channels">分类频道入口</a></li>
+        <li><a href="/#deep">深度解析</a></li>
+        <li><a href="/#guide">观战指南</a></li>
+        <li><a href="/#faq">常见问题</a></li>
+        <li><a href="/#comments">观众评论</a></li>
+        <li><a href="/#news">相关资讯</a></li>
+        <li><a href="/#tags">相关推荐</a></li>
+        <li><a href="/#timeline">事件时间线</a></li>
+      </ul>
+      <div class="side-stat">
+        <div><b>18</b><span>可核对条目</span></div>
+        <div><b>9</b><span>剪辑版本</span></div>
+        <div><b>4</b><span>当事方回应</span></div>
+        <div><b>7</b><span>时间线节点</span></div>
+      </div>
+    </div>
+    <div class="side-panel">
+      <h2>核对提示</h2>
+      <p class="side-quote">“原片宾语是阵容，剪辑宾语是 vk。两个版本都能自洽，所以争论常不在同一层。”<cite>—— 回放对照笔记，11月6日</cite></p>
+    </div>
+    <div class="side-panel">
+      <h2>高频检索词</h2>
+      <div class="tag-cloud">
+        <a href="/#deep">31分12秒</a>
+        <a href="/#featured">186字回应</a>
+        <a href="/#updates">52秒版</a>
+        <a href="/#guide">原片优先</a>
+        <a href="/#comments">4276票</a>
+        <a href="/#deep">小满语音</a>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="site-foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="15" fill="#f2b544"/>
+            <path d="M17 45 L32 15 L47 45" stroke="#1b2340" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="32" cy="38" r="4.4" fill="#e4572e"/>
+          </svg>
+          <b>一诺羞辱vk</b>
+        </div>
+        <p class="foot-desc">围绕直播原片、当事方回应与二创版本的信息对照站，条目均标注来源日期与材料层级。</p>
+      </div>
+      <div class="foot-group">
+        <h3>事件材料</h3>
+        <ul>
+          <li><a href="/#overview">四个层面概览</a></li>
+          <li><a href="/#deep">可核对结构表</a></li>
+          <li><a href="/#timeline">关键节点时间线</a></li>
+        </ul>
+      </div>
+      <div class="foot-group">
+        <h3>观战方法</h3>
+        <ul>
+          <li><a href="/#guide">四步定位原片</a></li>
+          <li><a href="/#faq">常见问题答疑</a></li>
+          <li><a href="/#updates">更新记录</a></li>
+        </ul>
+      </div>
+      <div class="foot-group">
+        <h3>讨论入口</h3>
+        <ul>
+          <li><a href="/#comments">观众评论摘录</a></li>
+          <li><a href="/#news">第三方资讯</a></li>
+          <li><a href="/#tags">相关推荐标签</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>示例数据说明：页面内条目、时间、票数均为演示用示例，非官方记录，引用前请以原片与当事方原文为准。</span>
+      <span class="upd">内容更新：2026-11-08 09:30 · 对应正文“11月7日投票加项”“11月6日回放补档”两项</span>
+    </div>
+    <div class="foot-bottom" style="border-top:1px solid rgba(255,255,255,.1);margin-top:14px">
+      <span>© 2026 一诺羞辱vk 观察站 · 非官方站点，不代当事人发言</span>
+      <span>站内导航支持键盘操作 · 关闭脚本不影响正文阅读</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"一诺羞辱vk",
+  "inLanguage":"zh-CN",
+  "description":"一诺羞辱vk事件脉络与回放对照，整理直播原片时间轴、当事方回应、剪辑版本差异与观众讨论。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"“羞辱”一词在原片里到底指什么？","acceptedAnswer":{"@type":"Answer","text":"指双方阵容强度差距。30:41 处念完三路英雄后，31:12 接上“这阵容打他们就是羞辱”，句中没出现 vk 的 ID。"}},
+    {"@type":"Question","name":"vk 当天有没有开麦对线？","acceptedAnswer":{"@type":"Answer","text":"vk 在 11 月 2 日动态里称自己未开麦，目前没有第三方语音记录公开，该说法为单方陈述。"}},
+    {"@type":"Question","name":"52 秒剪辑版和完整回放差在哪里？","acceptedAnswer":{"@type":"Answer","text":"52 秒版删去了 30:41 的英雄列举和前一局战况，标题直接把“羞辱”接到 vk 名字后，发布时间为 11 月 3 日 14:07。"}},
+    {"@type":"Question","name":"队友小满说的“阵容自己提的”可信吗？","acceptedAnswer":{"@type":"Answer","text":"属单方证言。11 月 3 日语音频道里小满表示阵容由自己提出，一诺方未公开确认，可作参考不宜当定论。"}},
+    {"@type":"Question","name":"4276 票的投票结果能说明什么？","acceptedAnswer":{"@type":"Answer","text":"只能说明参与者的即时倾向。原始选项只有两项，11 月 7 日才加入“两种解读都合理”，样本结构和选项设置都影响结论。"}},
+    {"@type":"Question","name":"一诺 11 月 1 日的回应算不算道歉？","acceptedAnswer":{"@type":"Answer","text":"不算。原话仅 4 秒“我说的是阵容”，属于解释而非致歉，且出现在争议发酵之后，证明力弱于 31:12 原片。"}},
+    {"@type":"Question","name":"为什么同一事件会出现两种完全相反的解读？","acceptedAnswer":{"@type":"Answer","text":"因为“羞辱”的宾语在传播中被替换了。原片宾语是阵容，剪辑标题宾语是 vk，两个版本各自内部自洽。"}},
+    {"@type":"Question","name":"想自己核对，最少要看哪几份材料？","acceptedAnswer":{"@type":"Answer","text":"三份：11 月 6 日补档回放第 3 段、11 月 3 日 52 秒剪辑版、11 月 2 日 vk 动态原文。"}}
+  ]
+}
+</script>
+
+<script>
+(function(){
+  var menuToggle=document.getElementById('menuToggle');
+  var mainNav=document.getElementById('mainNav');
+  var toTop=document.getElementById('toTop');
+
+  /* 移动菜单 */
+  if(menuToggle&&mainNav){
+    menuToggle.addEventListener('click',function(){
+      var open=mainNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded',open?'true':'false');
+      menuToggle.setAttribute('aria-label',open?'收起导航菜单':'展开导航菜单');
+    });
+    mainNav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        if(window.matchMedia('(max-width:1024px)').matches){
+          mainNav.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded','false');
+          menuToggle.setAttribute('aria-label','展开导航菜单');
+        }
+      });
+    });
+  }
+
+  /* 搜索本地查找 */
+  var input=document.getElementById('searchInput');
+  var btn=document.getElementById('searchBtn');
+  var fb=document.getElementById('searchFeedback');
+  var linkIndex=[];
+  document.querySelectorAll('main a[href^="/#"], aside a[href^="/#"]').forEach(function(a){
+    linkIndex.push({text:a.textContent.replace(/\s+/g,' ').trim(),href:a.getAttribute('href'),el:a});
+  });
+
+  function doSearch(){
+    if(!input||!fb) return;
+    var q=input.value.trim().toLowerCase();
+    if(!q){fb.textContent='';return;}
+    var hit=linkIndex.filter(function(item){return item.text.toLowerCase().indexOf(q)>-1;});
+    if(hit.length===0){
+      fb.textContent='没有找到“'+input.value.trim()+'”相关条目，试试：回放、投票、回应';
+      return;
+    }
+    fb.textContent='匹配 '+hit.length+' 条，跳转中';
+    var target=document.querySelector(hit[0].href.replace('/#','#'));
+    if(target){
+      if(window.matchMedia('(max-width:1024px)').matches&&mainNav){
+        mainNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded','false');
+      }
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  }
+  if(btn) btn.addEventListener('click',doSearch);
+  if(input) input.addEventListener('keydown',function(e){ if(e.key==='Enter'){e.preventDefault();doSearch();} });
+
+  /* 回到顶部 */
+  function onScroll(){
+    if(!toTop) return;
+    if(window.scrollY>560){toTop.classList.add('show');}
+    else{toTop.classList.remove('show');}
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  if(toTop) toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+  onScroll();
+
+  /* 侧栏滚动高亮 */
+  var sections=Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+  var sideLinks=Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  if(sections.length&&sideLinks.length){
+    if('IntersectionObserver' in window){
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){
+            sideLinks.forEach(function(l){
+              l.classList.toggle('active',l.getAttribute('href')==='#'+en.target.id);
+            });
+          }
+        });
+      },{rootMargin:'-120px 0px -55% 0px',threshold:0.01});
+      sections.forEach(function(s){obs.observe(s);});
+    }
+  }
+})();
+</script>
+</body>
+        </html>
